@@ -43,7 +43,7 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-base sm:text-lg text-gray-300 leading-relaxed mb-16 max-w-3xl mx-auto px-2"
         >
-          👨‍🚀 I'm <span className="text-white font-semibold">Rizqan</span>, a passionate explorer of futuristic UI/UX.
+          👨‍🚀 I&apos;m <span className="text-white font-semibold">Rizqan</span>, a passionate explorer of futuristic UI/UX.
           I build immersive websites with <span className="text-pink-400">React</span>, <span className="text-blue-400">Tailwind</span>, and <span className="text-purple-400">Next.js</span>.
           Let’s code through the cosmos together!
         </motion.p>
