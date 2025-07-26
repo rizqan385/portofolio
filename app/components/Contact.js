@@ -75,7 +75,7 @@ export default function Contact() {
       {/* Social Icons */}
       <div className="mt-12 flex justify-center gap-6 z-10">
         <a
-          href="https://wa.me/+6289513270487"
+          href="https://wa.me/6289513270487"
           target="_blank"
           rel="noopener noreferrer"
           className="relative group"
