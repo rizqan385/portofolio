@@ -83,7 +83,7 @@ for (const exp of topAchievements) {
             <pre>
               <code>
 {`const educationLog = [
-  "📘 SMK YAJ Depok – RPL (2023–Present)",
+  "📘 SMK YAJ Depok - RPL (2023-Present)",
 ];
 
 for (const school of educationLog) {

@@ -33,7 +33,7 @@ export default function Contact() {
       {/* Contact Form */}
       <div className="max-w-2xl mx-auto text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-          Let's <span className="text-pink-400">Connect</span>
+          Let&apos;s <span className="text-pink-400">Connect</span>
         </h2>
 
         <form className="space-y-6 bg-[#1e1e1e]/80 backdrop-blur-sm p-8 rounded-xl border border-gray-800 shadow-lg">
@@ -58,7 +58,7 @@ export default function Contact() {
           <div>
             <textarea
               placeholder="Your Message"
-              rows="5"
+              rows={5}
               className="w-full p-4 rounded-lg bg-[#2a2a2a] border border-gray-700 text-white focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all"
               required
             ></textarea>
@@ -72,7 +72,7 @@ export default function Contact() {
         </form>
       </div>
 
-      {/* Social Icons (not fixed anymore) */}
+      {/* Social Icons */}
       <div className="mt-12 flex justify-center gap-6 z-10">
         <a
           href="https://wa.me/089513270487"
