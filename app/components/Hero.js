@@ -18,11 +18,19 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative w-full h-screen text-white font-mono overflow-hidden flex items-center justify-center bg-[#0d0d0d]">
-      {/* Background grid ala Project Ravel */}
+    <section
+      className="relative w-full h-screen text-white font-mono overflow-hidden flex items-center justify-center"
+      style={{
+        backgroundImage: "url('/assets/cosmo.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Overlay grid optional (hapus kalau mau full clean image) */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:16px_16px]" />
 
-      {/* Glow besar dan smooth di pojok kiri atas dan kanan bawah */}
+      {/* Glows */} 
       <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl opacity-40 animate-pulseSlow z-10" />
       <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-full blur-3xl opacity-40 animate-pulseSlow z-10" />
 
@@ -66,12 +74,12 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="text-gray-400 text-sm sm:text-lg mt-4">
+          <p className="text-gray-300 text-sm sm:text-lg mt-4">
             Front-End Developer passionate about performance and design.
           </p>
         </div>
 
-        {/* GIF kanan tanpa glow */}
+        {/* GIF kanan */}
         <div className="mt-10 md:mt-0 md:ml-10">
           <div className="w-[280px] h-[280px] overflow-hidden">
             <Image
@@ -85,22 +93,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* CSS Animation */}
-      <style jsx>{`
-        @keyframes pulseSlow {
-          0%, 100% {
-            opacity: 0.3;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.9;
-            transform: scale(1.15);
-          }
-        }
-        .animate-pulseSlow {
-          animation: pulseSlow 2.5s infinite;
-        }
-      `}</style>
+     
     </section>
   )
 }
