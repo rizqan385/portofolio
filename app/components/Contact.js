@@ -86,7 +86,7 @@ export default function Contact() {
           </div>
         </a>
         <a
-          href="https://discord.com/users/yourid"
+          href="https://discord.gg/BV3nG5TS"
           target="_blank"
           rel="noopener noreferrer"
           className="relative group"
