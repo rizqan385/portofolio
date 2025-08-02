@@ -11,9 +11,12 @@ import {
   FaFigma,
   FaPython,
 } from 'react-icons/fa'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 export default function Skills() {
   const containerRef = useRef(null)
+  const skillRefs = useRef([])
   const [isPaused, setIsPaused] = useState(false)
 
   useEffect(() => {
@@ -34,9 +37,32 @@ export default function Skills() {
     }
 
     animationFrame = requestAnimationFrame(scroll)
-
     return () => cancelAnimationFrame(animationFrame)
   }, [isPaused])
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    skillRefs.current.forEach((el, i) => {
+      gsap.fromTo(
+        el,
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 90%',
+          },
+        }
+      )
+    })
+  }, [])
 
   const skills = [
     { icon: <FaHtml5 />, color: 'bg-orange-500', hover: 'group-hover:bg-orange-500', label: 'HTML5' },
@@ -76,6 +102,7 @@ export default function Skills() {
           {extendedSkills.map((skill, index) => (
             <div
               key={index}
+              ref={(el) => (skillRefs.current[index] = el)}
               className="flex-shrink-0 min-w-[110px] md:min-w-[150px] h-[110px] md:h-[150px] flex items-center justify-center rounded-xl transition duration-300 hover:scale-110 cursor-pointer group bg-[#1c1c3a]"
             >
               <div
