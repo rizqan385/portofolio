@@ -94,12 +94,9 @@ export default function Hero() {
 
       {/* TEKS */}
       <div className="z-10 text-center md:text-left md:max-w-lg mt-10 md:mt-0">
-        <h1
-          ref={titleRef}
-          className="text-4xl md:text-6xl font-bold mb-4"
-        >
-          Hi, I'm Rizqan
-        </h1>
+       <h1 ref={titleRef} className="text-4xl md:text-6xl font-bold mb-4">
+  Hi, I&rsquo;m Rizqan
+</h1>
         <div
           ref={subtitleRef}
           className="text-xl md:text-2xl text-gray-300 h-16"
