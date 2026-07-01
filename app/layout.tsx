@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
 import AudioPlayer from "./components/AudioPlayer";
+<meta name="google-site-verification" content="-hbVL6l7SqVpR7l97qPzvC3zCi1cSrtSA7wpfuyXQuo" />
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
