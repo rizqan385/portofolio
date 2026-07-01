@@ -4,7 +4,6 @@ import "./globals.css";
 import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
 import AudioPlayer from "./components/AudioPlayer";
-<meta name="google-site-verification" content="-hbVL6l7SqVpR7l97qPzvC3zCi1cSrtSA7wpfuyXQuo" />
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,8 +22,32 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "rizqan — portfolio",
-  description: "Full-stack web developer portfolio",
+  title: "rizqanahmd | Full-Stack Web & Mobile Developer",
+  description: "Portofolio resmi rizqanahmd (Rizqan Ahmad Maulana) - Full-Stack Web dan Mobile Developer yang berfokus pada Laravel, Go, dan web modern.",
+  keywords: ["rizqanahmd", "Rizqan Ahmad Maulana", "rizqan portfolio", "web developer Depok", "fullstack developer Indonesia"],
+  authors: [{ name: "Rizqan Ahmad Maulana" }],
+  creator: "Rizqan Ahmad Maulana",
+  openGraph: {
+    title: "rizqanahmd | Portofolio Resmi",
+    description: "Hubungi dan lihat proyek full-stack development terbaru dari rizqanahmd.",
+    url: "https://rizqanahmd.vercel.app",
+    siteName: "rizqanahmd Portfolio",
+    locale: "id_ID",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+    },
+  },
+  verification: {
+    google: "-hbVL6l7SqVpR7l97qPzvC3zCi1cSrtSA7wpfuyXQuo",
+  },
 };
 
 export default function RootLayout({
