@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 // ─── Particle type ───────────────────────────────────────────────────────────
 interface Particle {
@@ -156,27 +157,27 @@ export default function Hero() {
           variants={itemVariants}
           className="flex flex-wrap items-center gap-3 mt-10 justify-center"
         >
-          <a
+          <Link
             href="/about"
             className="hero-btn hero-btn--outline"
             id="hero-about-btn"
           >
             About me
-          </a>
-          <a
+          </Link>
+          <Link
             href="/projects"
             className="hero-btn hero-btn--filled"
             id="hero-projects-btn"
           >
             View projects
-          </a>
-          <a
+          </Link>
+          <Link
             href="/contact"
             className="hero-btn hero-btn--outline"
             id="hero-contact-btn"
           >
             Contact
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
 
