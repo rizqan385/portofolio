@@ -5,8 +5,20 @@ import { useEffect, useRef, useState } from "react";
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [textSize, setTextSize] = useState<number | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
+    // Check if device supports touch/coarse pointer
+    const checkTouch = () => {
+      setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+    };
+    checkTouch();
+    window.addEventListener("resize", checkTouch);
+    return () => window.removeEventListener("resize", checkTouch);
+  }, []);
+
+  useEffect(() => {
+    if (isTouchDevice) return;
     const onMouseMove = (e: MouseEvent) => {
       if (cursorRef.current) {
         cursorRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
@@ -53,6 +65,8 @@ export default function CustomCursor() {
 
   const isText = textSize !== null;
   const caretHeight = isText ? Math.min(Math.max(textSize!, 14), 120) : 20;
+
+  if (isTouchDevice) return null;
 
   return (
     <div
