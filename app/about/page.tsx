@@ -100,7 +100,12 @@ function SkillsOrbit() {
 
   useEffect(() => {
     const resize = () => {
-      if (wrapRef.current) setScale(Math.min(1, wrapRef.current.offsetWidth / BOX));
+      if (wrapRef.current) {
+        // Prevent it from shrinking too much on mobile so it stays large & realistic
+        const screenW = wrapRef.current.offsetWidth;
+        const newScale = screenW < 500 ? Math.max(0.75, screenW / 500) : Math.min(1, screenW / BOX);
+        setScale(newScale);
+      }
     };
     resize();
     window.addEventListener("resize", resize);
@@ -121,15 +126,17 @@ function SkillsOrbit() {
   });
 
   return (
-    <div ref={wrapRef} className="w-full flex justify-center">
+    <div ref={wrapRef} className="w-full flex justify-center overflow-visible">
       <div style={{ width: BOX, height: BOX, position: "relative", transform: `scale(${scale})`, transformOrigin: "top center", flexShrink: 0 }}>
         {[1, 2, 3].map(o => (
           <div key={o} style={{
             position: "absolute", top: "50%", left: "50%",
             width: ORBIT_CFG[o].r * 2, height: ORBIT_CFG[o].r * 2,
             marginLeft: -ORBIT_CFG[o].r, marginTop: -ORBIT_CFG[o].r,
-            borderRadius: "50%", border: "1px solid rgba(255,255,255,0.08)",
-            boxShadow: "0 0 20px rgba(255,255,255,0.02) inset", pointerEvents: "none",
+            borderRadius: "50%", 
+            border: "1px dashed rgba(255,255,255,0.2)",
+            boxShadow: "0 0 30px rgba(255,255,255,0.05) inset, 0 0 10px rgba(255,255,255,0.03)", 
+            pointerEvents: "none",
           }} />
         ))}
         <div style={{
