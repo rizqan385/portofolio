@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About rizqanahmd | Full-Stack Developer",
-  description: "Learn more about Rizqan Ahmad Maulana, a dedicated full-stack developer specializing in modern web technologies, scalable architectures, and beautiful UI/UX.",
+  title: "About",
+  description: "Kenali Rizqan Ahmad Maulana, full-stack developer dari Indonesia yang berfokus pada Laravel, React, Next.js, dan teknologi web modern.",
+  openGraph: {
+    title: "About rizqanahmd | Full-Stack Developer",
+    description: "Kenali Rizqan Ahmad Maulana, full-stack developer dari Indonesia yang berfokus pada Laravel, React, Next.js, dan teknologi web modern.",
+    url: "https://rizqanahmd.vercel.app/about",
+  },
+  alternates: {
+    canonical: "https://rizqanahmd.vercel.app/about",
+  },
 };
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
